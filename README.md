@@ -7,6 +7,8 @@ The core components of a solid Adobe Analytics implementation.
 * [Implementation](#implementation)
 * [Report Suite Configuration](#report-suite-configuration)
 * [Variable Design](#variable-solution-design)
+  * [Value guidelines](#value-guidelines)
+  * [Core Dimensions](#core-dimensions)
 
 
 ## Background
@@ -37,21 +39,23 @@ It is highly recommended to implement a [W3C compliant data layer](https://www.w
 * Short values are better than long values, but don't sacrifice readability
 * Notions of hierarchy and textual patterns are your friends (for simpler regex in the future)
 * Use of the colon as a delimiter is preferable (the pipe can make regex slightly more complex)
+* Don't overload variables containing ID values
 
 ### Core Dimensions
 * Dimensions are captured in Adobe Analytics through a variety of variables. Some default (pagename, channel, campaign) and other custom (eVars, props, listvars).
 
 
-**Page Identifiers**
+#### Page Identifiers
 
 dimension | Notes
 --------- | -----
-Page Name | Leverage hierarchy; lowercase  
-Page URL  | More granular than pagename
+Page Name | Leverage hierarchy; lowercase
+Page Type | Aggregation of similar page templates
+Page URL  | Dig into page name
 Previous Page | Page name of previous page in session
 
 
-**Site Search**
+#### Site Search
 
 dimension | Notes
 --------- | -----
@@ -59,7 +63,7 @@ Site Search Keyword | Force lowercase
 Results Returned | Number of search results returned
 
 
-**Technical Debugging**
+#### Technical Debugging
 
 dimension | Notes
 --------- | -----
@@ -67,7 +71,7 @@ Browser User Agent | More granular browser/OS debugging
 Code Deployment Date | Better debugging
 
 
-**Time-Based Analysis**
+#### Time-Based
 
 dimension | Notes
 --------- | -----
