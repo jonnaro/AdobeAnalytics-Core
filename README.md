@@ -47,33 +47,36 @@ It is highly recommended to implement a [W3C compliant data layer](https://www.w
 
 #### Page Identifiers
 
-dimension | Notes
---------- | -----
-Page Name | Leverage hierarchy; lowercase
-Page Type | Aggregation of similar page templates
-Page URL  | Dig into page name
-Previous Page | Page name of previous page in session
+dimension | format
+---: | :---
+Page Name | lowercase, colon delimiter
+Page Type | lowercase
+Page URL  | lowercase, filter irrelevant query parameters
+Previous Page | same as page name
+
 
 
 #### Site Search
 
-dimension | Notes
---------- | -----
-Site Search Keyword | Force lowercase
-Results Returned | Number of search results returned
+dimension | format
+---: | :---
+Search Keyword | lowercase
+Search Result Size | integer
+
 
 
 #### Technical Debugging
 
-dimension | Notes
---------- | -----
-Browser User Agent | More granular browser/OS debugging
-Code Deployment Date | Better debugging
+dimension | format
+---: | :---
+Code Deployment Date | YYYY-MM-DD
+User Agent | More granular browser/OS debugging
+
 
 
 #### Time-Based
 
-dimension | Notes
---------- | -----
-User Date | Time-based analysis. YYYY-MM-DD
-User Time | Time-based analysis. HH:MM (24H clock)
+dimension | format
+---: | :---
+User Date | YYYY-MM-DD
+User Time | HH:MM (24H)
