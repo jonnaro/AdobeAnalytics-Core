@@ -43,26 +43,35 @@ It is highly recommended to implement a [W3C compliant data layer](https://www.w
 
 ### Core Dimensions
 * Dimensions are captured in Adobe Analytics through a variety of variables. Some default (pagename, channel, campaign) and other custom (eVars, props, listvars).
+* In almost all cases, it makes sense to force these values to lowercase. This will help minimize duplication issues that might otherwise arise.
 
 
 #### Page Identifiers
 
-dimension | format
+dimension | notes
 ---: | :---
-Page Name | lowercase, colon delimiter
-Page Type | lowercase
-Page URL  | lowercase, filter irrelevant query parameters
-Previous Page | same as page name
+Page Name | hierarchical; colon delimiter
+Page Type |
+Page URL  | exclude irrelevant query parameters
+Previous Page | same format as page name
 
+
+#### User Identifiers
+
+dimension | notes
+---: | :---
+Adobe Visitor ID | make accessible to reporting
+Browser User Agent | More granular debugging
+User Date | YYYY-MM-DD
+User Time | HH:MM (24H)
 
 
 #### Site Search
 
-dimension | format
+dimension | notes
 ---: | :---
-Search Keyword | lowercase
+Search Keyword |
 Search Result Size | integer
-
 
 
 #### Technical Debugging
@@ -70,13 +79,3 @@ Search Result Size | integer
 dimension | format
 ---: | :---
 Code Deployment Date | YYYY-MM-DD
-User Agent | More granular browser/OS debugging
-
-
-
-#### Time-Based
-
-dimension | format
----: | :---
-User Date | YYYY-MM-DD
-User Time | HH:MM (24H)
