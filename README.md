@@ -1,11 +1,11 @@
-# AdobeAnalytics-Core
+# Analytics-Core
 The core components of a solid Adobe Analytics implementation.
 
 ## Contents
 
 * [Background](#background)
 * [Implementation](#implementation)
-* [Adobe Analytics](core-AdobeAanalytics.md)
+* [Adobe Analytics](../blob/MASTER/core-AdobeAnalytics.md)
 
 
 ## Background
